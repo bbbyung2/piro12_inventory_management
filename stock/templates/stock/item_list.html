@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+stock/templates/stock/item_list.html:1
+stock/templates/stock/item_list.html
+{% block content %}
+{#<a href="{% url 'item_new' %}" class="btn btn-warning">게시물 작성하기</a>#}
+<div>
+    <ul class="list-group list-group-flush">
+        {% for article in articles %}
+            <a class="list-group-item" href="{% url 'detail_list' article.pk %}">
+                <li style="list-style: none;">{{ article.title }}</li>
+            </a>
+        {% endfor %}
+    </ul>
+</div>
+
+
+{% endblock %}
