@@ -13,4 +13,3 @@ class Stock(models.Model):
     price = models.PositiveIntegerField(verbose_name='가격')
     amount = models.IntegerField(verbose_name='남은수량')
     company = models.ForeignKey('Company', on_delete=models.PROTECT)
-

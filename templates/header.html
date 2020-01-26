@@ -1,19 +1,16 @@
 <nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="#">
-    <img src="img/home1.jpg" width="30" height="30" alt="">
+  <a class="navbar-brand" href="{% url 'stock:item_list' %}">
+    <img src="img/apple.jpg" width="30" height="30" alt="">
   </a>
-    <!-- <ul class="nav justify-content-end">
+    <ul class="nav justify-content-end">
         <li class="nav-item">
-            <a class="nav-link active" href="#">Active</a>
+            <a class="nav-link active" href="{% url 'stock:item_new' %}">상품 등록</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="{% url 'stock:comp_new' %}">거래처 등록</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="{% url 'stock:comp_list' %}">거래처 관리</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li>
-    </ul> -->
+    </ul>
 </nav>

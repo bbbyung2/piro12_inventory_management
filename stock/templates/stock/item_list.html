@@ -1,17 +1,23 @@
 {% extends "base.html" %}
-stock/templates/stock/item_list.html:1
-stock/templates/stock/item_list.html
+
 {% block content %}
-{#<a href="{% url 'item_new' %}" class="btn btn-warning">게시물 작성하기</a>#}
-<div>
-    <ul class="list-group list-group-flush">
-        {% for article in articles %}
-            <a class="list-group-item" href="{% url 'detail_list' article.pk %}">
-                <li style="list-style: none;">{{ article.title }}</li>
-            </a>
-        {% endfor %}
-    </ul>
-</div>
+    {% for item in items %}
+    <div class="row row-cols-1 row-cols-md-3">
+        <div class="col mb-4">
+        <div class="card">
+            <img src="{{ item.img }}" class="card-img-top" alt="{{ item.img }}">
+            <ul class="card-body">
+            <h5 class="card-title">
+                <a href="{% url 'stock:detail_list' pk=id %}">
 
-
-{% endblock %}
+                <li style="list-style: none;">{{ item.name }}}</li></a>
+            </h5>
+            <p class="price-text"><li style="list-style: none;">{{ item.price }}</li></p>
+            <p class="amount-text"><li style="list-style: none;">{{ item.amount }}</li></p>
+            <p class="card-text"><li style="list-style: none;">{{ item.info }}</li></p>
+            </div>
+        </div>
+        </div>
+    </div>
+    {% endfor %}
+  {% endblock %}
