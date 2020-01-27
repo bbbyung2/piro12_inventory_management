@@ -5,6 +5,10 @@ class Company(models.Model):
     tel = models.CharField(max_length=20, verbose_name='전화번호')
     addr = models.TextField(blank=True, verbose_name='주소')
 
+    def __str__(self):
+        return self.name
+    
+
 
 class Stock(models.Model):
     name = models.CharField(max_length=200, verbose_name='제품명')
@@ -13,3 +17,7 @@ class Stock(models.Model):
     price = models.PositiveIntegerField(verbose_name='가격')
     amount = models.IntegerField(verbose_name='남은수량')
     company = models.ForeignKey('Company', on_delete=models.PROTECT)
+
+    def __str__(self):
+        return self.name
+    

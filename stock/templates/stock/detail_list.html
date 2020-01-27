@@ -1,14 +1,29 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <div class="card" style="width: 18rem;">
-    <img src="{{ item.img.url }}" class="card-img-top" alt="...">
-    <div class="card-body">
-      <p class="card-text">{{ item.name }}</p>
-      <p class="card-price">가격: {{ item.price }}</p>
-      <p class="card-amount">남은 수량: {{ item.amount }}</p>
-      <p class="card-info">제품 설명: {{ item.info }}</p>
-      <p class="card-company"><a href="{% url 'stock:detail_comp' %}">거래처: {{ item.company }}</a></p>
+    <div class="card" style="width: 18rem;">
+        <img src="{{ item.img.url }}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <p class="card-text">{{ item.name }}</p>
+            <p class="card-price">가격: {{ item.price }}</p>
+            <p class="card-amount">남은 수량: {{ item.amount }}</p>
+            <p class="card-info">제품 설명: {{ item.info }}</p>
+            <p class="card-company"><a href="{% url 'stock:detail_comp' item.pk %}">거래처: {{ item.company }}</a></p>
+        </div>
     </div>
-  </div>
+    <div>
+        <ul style="list-style: none">
+            <li>
+                <input type="submit" value="수정"><a href="{% url 'stock:comp_list' %}"></a>
+            </li>
+            <li>
+                <input type="submit" value="삭제"><a href="{% url 'stock:comp_list' %}"></a>
+            </li>
+            <li>
+                <input type="submit" value="목록"><a href="{% url 'stock:comp_list' %}"></a>
+            </li>
+            {#                <li><button class="btn btn-warning" type="submit"><a href="{% url 'stock:comp_list' %}">삭제</a></button></li>#}
+            {#                <li><button class="btn btn-warning" type="submit"><a href="{% url 'stock:comp_list' %}">목록</a></button></li>#}
+        </ul>
+    </div>
 {% endblock %}

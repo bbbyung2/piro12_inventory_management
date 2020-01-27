@@ -5,12 +5,12 @@
     <div class="row row-cols-1 row-cols-md-3">
         <div class="col mb-4">
         <div class="card">
-            <img src="{{ item.img }}" class="card-img-top" alt="{{ item.img }}">
-            <ul class="card-body">
+            <img src="{{ item.img.url }}" class="card-img-top" alt="{{ item.img }}">
+            <div class="card-body">
             <h5 class="card-title">
-                <a href="{% url 'stock:detail_list' pk=id %}">
+                <a href="{% url 'stock:detail_list' item.pk %}">
 
-                <li style="list-style: none;">{{ item.name }}}</li></a>
+                <li style="list-style: none;">{{ item.name }}</li></a>
             </h5>
             <p class="price-text"><li style="list-style: none;">{{ item.price }}</li></p>
             <p class="amount-text"><li style="list-style: none;">{{ item.amount }}</li></p>
