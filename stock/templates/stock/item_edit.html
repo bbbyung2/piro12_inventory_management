@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form action="" method="POST" enctype="multipart/form-data" autocomplete="off">
+    {% csrf_token %}
+        <div><h4>상품 등록</h4></div>
+        <div class="form-group">
+            <label for="name">제품명:</label>
+            <input type="text" id="name" name="name" value="{{ item.name }}">
+        </div>
+        <div class="form-group">
+            <label for="img">제품 사진:</label>
+            <input type="file" name="img" id="img"  value="{{ item.img.url }}">
+        </div>
+        <div class="form-group">
+            <label for="info">제품 설명:</label>
+            <textarea name="info" id="info" cols="30" rows="10">{{ item.info }}</textarea>
+        </div>
+        <div class="form-group">
+            <label for="price">가격:</label>
+            <input type="text" id="price" name="price" value="{{ item.price }}">
+        </div>
+        <div class="form-group">
+            <label for="amount">남은 수량:</label>
+            <input type="text" id="amount" name="amount" value="{{ item.amount }}">
+        </div>
+        <div class="form-group">
+            <label for="company">거래처:</label>
+            <input type="text" id="company" name="company" value="{{ item.company }}">
+        </div>
+        <input type="submit" value="등록">
+    </form>
+{% endblock %}

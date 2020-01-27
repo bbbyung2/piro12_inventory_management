@@ -14,16 +14,16 @@
     <div>
         <ul style="list-style: none">
             <li>
-                <input type="submit" value="수정"><a href="{% url 'stock:comp_list' %}"></a>
+                <button class="btn btn-warning" type="submit"><a href="{% url 'stock:item_edit' item.pk %}">수정</a></button>
             </li>
             <li>
-                <input type="submit" value="삭제"><a href="{% url 'stock:comp_list' %}"></a>
+                <button class="btn btn-warning" type="submit"><a href="{% url 'stock:item_del' item.pk %}">삭제</a></button>
             </li>
             <li>
-                <input type="submit" value="목록"><a href="{% url 'stock:comp_list' %}"></a>
+                <button class="btn btn-warning" type="submit"><a href="{% url 'stock:item_list' %}">목록</a></button>
             </li>
-            {#                <li><button class="btn btn-warning" type="submit"><a href="{% url 'stock:comp_list' %}">삭제</a></button></li>#}
-            {#                <li><button class="btn btn-warning" type="submit"><a href="{% url 'stock:comp_list' %}">목록</a></button></li>#}
+            {#                <li></li>#}
+            {#                <li></li>#}
         </ul>
     </div>
 {% endblock %}

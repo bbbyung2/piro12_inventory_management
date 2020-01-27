@@ -10,33 +10,21 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>inventory management site</title>
-    <style>
-        * {
-            position: relative;
-
-        }
-
-        .footer {
-
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            padding: 15px 0;
-            text-align: center;
-            color: white;
-            background: black;
-        }
-    </style>
 </head>
 <body>
 {% include 'header.html' %}
+<div class="container">
+    {% block content %}
+    {% endblock %}
+</div>
 
-{% block content %}
-{% endblock %}
-{#  <div class="footer">#}
-{#      <div class="cont">&copy;피로그래밍|이름:고병화</div>#}
-{#      <div class="cont">서울시 마포구 상수동</div>#}
-{#  </div>#}
+<footer>
+<div class="footer" style="left: 0; bottom: 0; background-color: black; color: white; text-align: center; height: 90px;">
+    <br />
+    <div class="cont">&copy;피로그래밍 | 이름:고병화</div>
+    <div class="cont">서울시 마포구 상수동</div>
+</div>
+</footer>
 
 </body>
 </html>

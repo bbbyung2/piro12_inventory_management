@@ -16,7 +16,7 @@ class Stock(models.Model):
     info = models.TextField(blank=True, verbose_name='제품설명')
     price = models.PositiveIntegerField(verbose_name='가격')
     amount = models.IntegerField(verbose_name='남은수량')
-    company = models.ForeignKey('Company', on_delete=models.PROTECT)
+    company = models.ForeignKey('Company', on_delete=models.CASCADE, verbose_name='거래처')
 
     def __str__(self):
         return self.name
