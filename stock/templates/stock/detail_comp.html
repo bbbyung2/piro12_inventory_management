@@ -10,7 +10,7 @@
             <hr />
             <p>거래 상품 목록</p>
             {% for item in comp.products.all %}
-                    <a href="{% url "stock:detail_list" item.pk %}">{{ comp.name }}</a>
+                    <a href="{% url "stock:detail_list" item.pk %}">{{ item.name }}</a>
                     <br/>
             {% endfor %}
         </div>
