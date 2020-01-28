@@ -8,7 +8,7 @@
             <p class="card-price">가격: {{ item.price }}</p>
             <p class="card-amount">남은 수량: {{ item.amount }}</p>
             <p class="card-info">제품 설명: {{ item.info }}</p>
-            <p class="card-company"><a href="{% url 'stock:detail_comp' item.pk %}">거래처: {{ item.company }}</a></p>
+            <p class="card-company"><a href="{% url 'stock:detail_comp' item.company.pk %}">거래처: {{ item.company }}</a></p>
         </div>
     </div>
     <div>

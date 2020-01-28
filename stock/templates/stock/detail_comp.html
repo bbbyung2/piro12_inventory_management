@@ -9,7 +9,7 @@
             <p class="card-addr">{{ comp.addr }}</p>
             <hr />
             <p>거래 상품 목록</p>
-            {% for item in comp.products.all %}
+            {% for item in comp.item.all %}
                     <a href="{% url "stock:detail_list" item.pk %}">{{ item.name }}</a>
                     <br/>
             {% endfor %}
